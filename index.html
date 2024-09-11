@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reader's Realm - Home</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Reader's Realm </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+<!-- Featured Books Section -->
+<section id="featured-books">
+    <h2>Featured Books</h2>
+    <div id="featured-book-list">
+        <!-- Featured Book Card 1 -->
+        <div class="book-card">
+            <img src="KBW.webp" alt="Islamic Book Title 1 Cover" class="book-cover">
+            <h3><a href="https://islamicbulletin.org/en/ebooks/companions/khalid.pdf">The Sword of Allah</a></h3>
+            <p><strong>Author:</strong> Lieutenant-General A.I. Akram</p>
+            <p><strong>Genre:</strong> Islamic</p>
+            <a href="book-detail1.html" class="cta-button">View Details</a>
+        </div>
+        <!-- Featured Book Card 2 -->
+        <div class="book-card">
+            <img src="7 habits.jpg" alt="Self Improvement Book Title 1 Cover" class="book-cover">
+            <h3><a href="https://ati.dae.gov.in/ati12052021_1.pdf">The 7 Habits of Highly Effective People</a></h3>
+            <p><strong>Author:</strong> Stephen R. Covey</p>
+            <p><strong>Genre:</strong> Self Improvement</p>
+            <a href="book-detail3.html" class="cta-button">View Details</a>
+        </div>
+        <div class="book-card">
+            <img src="screw.jpg" alt="Mystery Book Title 2 Cover" class="book-cover">
+            <h3><a href="https://www.ibiblio.org/ebooks/James/Turn_Screw.pdf">The Turn of the Screw</a></h3>
+            <p><strong>Author:</strong>Henry James</p>
+            <p><strong>Genre:</strong> Mystery</p>
+            <a href="book-detail8.html" class="cta-button">View Details</a>
+        </div>
+
+        <div class="book-card">
+            <img src="heart_of_darkness.jpg" alt="Adventure Book Title 2 Cover" class="book-cover">
+            <h3><a href="https://www.ibiblio.org/ebooks/Conrad/Heart_Darkness.pdf">Heart of Darkness</a></h3>
+            <p><strong>Author:</strong>  Joseph Conrad</p>
+            <p><strong>Genre:</strong> Adventure</p>
+            <a href="book-detail10.html" class="cta-button">View Details</a>
+        </div>
+        <div class="book-card">
+            <img src="haaaalim.webp" alt="Fiction Book Title 2 Cover" class="book-cover">
+            <h3><a href="https://drive.google.com/file/d/1NX2J-tiAhNg6wcCwtnQnNlChlEkpXhnV/view?usp=drivesdk">Haalim</a></h3>
+            <p><strong>Author:</strong>Nimra Ahmed</p>
+            <p><strong>Genre:</strong> Fiction</p>
+            <a href="book-detail6.html" class="cta-button">View Details</a>
+        </div>
+    </div>
+    <!-- Link to View All Books -->
+    <a href="books.html" class="cta-button">Explore All Books</a>
+</section>
+
+
+
+ <!-- Explore Our Collection Section -->
+<section id="explore-collection">
+    <h2>Explore Our Collection</h2>
+    <p>Discover our curated selection of books across various genres. Dive into the world of literature with just a click!</p>
+    <a href="books.html" class="cta-button">View All Books</a>
+</section>
+
+<!-- Have a New Book to Share? Section -->
+<section id="new-book-share">
+    <h2>Have a New Book to Share?</h2>
+    <p>We welcome your contributions! Share your favorite reads with the community and help others discover new books.</p>
+    <a href="booksubmission.html" class="cta-button">Submit a Book</a>
+</section>
+
+<!-- Join the Community Section -->
+<section id="join-community">
+    <h2>Join the Community</h2>
+    <p>Be part of our vibrant community of book lovers. Join discussions, share reviews, and connect with fellow readers.</p>
+    <a href="community.html" class="cta-button">Join Now</a>
+</section>
+
+
+<!-- Footer Section -->
+<footer>
+    <p>© 2024 Reader's Realm. All rights reserved.</p>
+</footer>
+
+
+<script>
+    function toggleMenu() {
+        var x = document.querySelector(".navbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail - The 7 Habits of Highly Effective People</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:  #B99470;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* navbar starts */
+    nav ul {
+        list-style: none;
+        padding: 0;
+         
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+        padding-right: 10px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;    
+    }
+   /* Make the navbar responsive */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        nav ul li {
+            margin: 10px 0;
+        }
+    }
+    a:hover {
+    text-decoration: underline;
+}
+ /* navbar ends */
+
+        .book-detail {
+            padding: 20px;
+            background-color: #FEFAE0;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .book-cover {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .book-detail h2 {
+            margin-top: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #B99470;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #ca8a4b;
+        }
+
+        /* Rating Section */
+     /* Rating Section */
+     .rating {
+            margin-top: 20px;
+        }
+
+        .stars {
+            display: inline-block;
+            font-size: 2rem;
+            direction: rtl; /* Display stars from right to left */
+        }
+
+        .stars input {
+            display: none; /* Hide the actual radio buttons */
+        }
+
+        .stars label {
+            color: #ccc;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .stars label:hover,
+        .stars label:hover ~ label,
+        .stars input:checked ~ label {
+            color: #ffcc00;
+        }
+
+        .average-rating {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .review-form {
+            margin-top: 20px;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            height: 150px; /* Fixed height */
+            max-height: 150px;
+            resize: none; /* Disable resizing */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .review-form button {
+            padding: 10px 15px;
+            background-color: #B99470;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .review-form button:hover {
+            background-color:#ca8a4b;
+        }
+
+        .confirmation-message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Reader's Realm</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="book-detail">
+        <h2>The 7 Habits of Highly Effective People</h2>
+        <img src="7 habits.jpg" alt="The 7 Habits of Highly Effective People Cover" class="book-cover">
+        <p><strong>Author:</strong> Stephen R. Covey</p>
+        <p><strong>Description:</strong> A self-help classic, "The 7 Habits of Highly Effective People" provides a framework for personal and professional effectiveness through seven key habits that can transform the way we approach our goals and relationships.</p>
+        <p><strong>Publication Information:</strong> Published by XYZ, 2024</p>
+        <a href="https://ati.dae.gov.in/ati12052021_1.pdf" class="cta-button" target="_blank">Read the Book</a>
+
+        <!-- Rating Section -->
+        <div class="rating">
+            <h3>Rate this Book:</h3>
+            <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+
+            <div class="average-rating">
+                Average Rating: <span id="avg-rating">4.6</span> / 5
+            </div>
+        </div>
+
+        <!-- Review Form -->
+        <div class="review-form">
+            <h3>Leave a Review:</h3>
+            <textarea id="review-text" placeholder="Write your review here..."></textarea>
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </div>
+
+        <div id="confirmation-message" class="confirmation-message">
+            Thank you for your review!
+        </div>
+    </section>
+
+    <script>
+        function submitReview() {
+            var reviewText = document.getElementById('review-text').value;
+            var rating = document.querySelector('input[name="rating"]:checked');
+            var confirmationMessage = document.getElementById('confirmation-message');
+
+            if (reviewText && rating) {
+                // Display confirmation message
+                confirmationMessage.style.display = 'block';
+                // Clear the form
+                document.getElementById('review-text').value = '';
+                document.querySelector('input[name="rating"]:checked').checked = false;
+            } else {
+                alert('Please provide a rating and write a review.');
+            }
+        }
+    </script>
+
+</body>
+</html>

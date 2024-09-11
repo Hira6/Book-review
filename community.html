@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Reader's Realm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #B99470;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+         /* navbar starts */
+    nav ul {
+        list-style: none;
+        padding: 0;
+         
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+        padding-right: 10px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;    
+    }
+
+   
+    
+    /* Make the navbar responsive */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        nav ul li {
+            margin: 10px 0;
+        }
+    }
+    a:hover {
+    text-decoration: underline;
+}
+ /* navbar ends */
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:  #FEFAE0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:  white;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #B99470;
+        }
+        .new-post {
+            margin-bottom: 30px;
+        }
+        .new-post textarea {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: 120px;
+            resize: none;
+        }
+        .new-post button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color:  #B99470;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .new-post button:hover {
+            background-color:  #ca8a4b;
+        }
+        .post {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .post h3 {
+            margin-top: 0;
+        }
+        .post p {
+            margin: 10px 0;
+        }
+        .post .post-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .post .post-actions button {
+            font-size: 14px;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .post .post-actions .like {
+            background-color: #28a745;
+            color: white;
+        }
+        .post .post-actions .like:hover {
+            background-color: #218838;
+        }
+        .post .post-actions .dislike {
+            background-color: #dc3545;
+            color: white;
+        }
+        .post .post-actions .dislike:hover {
+            background-color: #c82333;
+        }
+        .post .comment-section {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #e9ecef;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .comment-form textarea {
+            width: 100%;
+            padding:5px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            height: 80px;
+            resize: none;
+        }
+        .comment-form button {
+            background-color:  #B99470;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .comment-form button:hover {
+            background-color:  #ca8a4b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Reader's Realm Community</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Join the Discussion</h2>
+
+        <!-- Create New Post -->
+        <div class="new-post">
+            <textarea id="new-post-text" placeholder="What's on your mind? Share your thoughts here..."></textarea>
+            <button onclick="addPost()">Post</button>
+        </div>
+
+        <!-- Posts Section -->
+        <div id="posts-section">
+            <!-- Example Post -->
+            <div class="post">
+                <h3>What's your favorite mystery novel?</h3>
+                <p>I just finished reading 'The Murder of Roger Ackroyd' and it blew my mind! Does anyone have other recommendations in this genre?</p>
+
+                <div class="post-actions">
+                    <button class="like" data-is-like="false" onclick="toggleLikeDislike(this)">Like</button>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comment-section">
+                    <h4>Comments</h4>
+                    <div class="comment">
+                        <strong>Ammad:</strong> I love 'The Conquest of Jerusalem' by  Abdullah Nasih Ulwan. It's a must-read!
+                    </div>
+                    <div class="comment">
+                        <strong>Ulfat:</strong> Try 'Namal' It’s thrilling!
+                    </div>
+
+                    <!-- Add a Comment -->
+                    <div class="comment-form">
+                        <textarea placeholder="Write your comment..." class="comment-text"></textarea>
+                        <button onclick="addComment(this)">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add a new post
+        function addPost() {
+            var postText = document.getElementById('new-post-text').value;
+            if (postText) {
+                // Create a new post element
+                var postDiv = document.createElement('div');
+                postDiv.classList.add('post');
+                postDiv.innerHTML = `
+                    <h3>New Discussion</h3>
+                    <p>${postText}</p>
+                    <div class="post-actions">
+                        <button class="like" data-is-like="false" onclick="toggleLikeDislike(this)">Like</button>
+                    </div>
+                    <div class="comment-section">
+                        <h4>Comments</h4>
+                        <div class="comment-form">
+                            <textarea placeholder="Write your comment..." class="comment-text"></textarea>
+                            <button onclick="addComment(this)">Comment</button>
+                        </div>
+                    </div>
+                `;
+                // Add the new post to the posts section
+                document.getElementById('posts-section').appendChild(postDiv);
+                // Clear the textarea
+                document.getElementById('new-post-text').value = '';
+            } else {
+                alert("Please enter something to post.");
+            }
+        }
+
+        // Toggle Like/Dislike
+        function toggleLikeDislike(button) {
+            // Check the current state of the button
+            var isLike = button.dataset.isLike === 'true';
+
+            if (isLike) {
+                // Currently liked, switch to dislike
+                button.textContent = 'Like';
+                button.classList.remove('dislike');
+                button.classList.add('like');
+                button.style.backgroundColor = '#28a745'; // Like color
+                button.dataset.isLike = 'false';
+            } else {
+                // Currently not liked, switch to like
+                button.textContent = 'Dislike';
+                button.classList.remove('like');
+                button.classList.add('dislike');
+                button.style.backgroundColor = '#dc3545'; // Dislike color
+                button.dataset.isLike = 'true';
+            }
+        }
+
+        // Add a new comment to the post
+        function addComment(button) {
+            var commentText = button.previousElementSibling.value;
+            if (commentText) {
+                // Create a new comment element
+                var commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+                commentDiv.innerHTML = `<strong>You:</strong> ${commentText}`;
+                // Add the comment to the comment section
+                button.closest('.comment-section').insertBefore(commentDiv, button.closest('.comment-form'));
+                // Clear the comment textarea
+                button.previousElementSibling.value = '';
+            } else {
+                alert("Please enter a comment.");
+            }
+        }
+    </script>
+
+</body>
+</html>

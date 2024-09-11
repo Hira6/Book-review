@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Submission - Reader's Realm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #B99470;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        /* navbar starts */
+    nav ul {
+        list-style: none;
+        padding: 0;
+         
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+        padding-right: 10px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;    
+    }
+
+   
+    
+    /* Make the navbar responsive */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        nav ul li {
+            margin: 10px 0;
+        }
+    }
+    a:hover {
+    text-decoration: underline;
+}
+ /* navbar ends */
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color:  #FEFAE0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color:  white;
+        }
+        h2{
+            color: #B99470;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        input, textarea {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            background-color:  #B99470;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #ca8a4b;
+        }
+        footer {
+            margin-top: 40px;
+            background-color:  #B99470;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Book Submission</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Submit a New Book</h2>
+        <form id="book-submission-form">
+            <label for="title">Book Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="6" required></textarea>
+
+            <label for="cover">Cover Image URL</label>
+            <input type="text" id="cover" name="cover" required>
+
+            <input type="submit" value="Submit Book">
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Reader's Realm. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('book-submission-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            alert("Thank you for your submission!");
+            // Optionally, you can reset the form after the alert
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
